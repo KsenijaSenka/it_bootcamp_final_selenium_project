@@ -1,5 +1,6 @@
 package tests;
 
+import Helper.Helper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ public abstract class BasicTest {
     protected WebDriverWait wait;
     protected JavascriptExecutor js;
 
+
     @BeforeClass
     public void BeforeClass() {
         WebDriverManager.chromedriver().setup();
@@ -36,7 +38,7 @@ public abstract class BasicTest {
     public void afterMethod(ITestResult testResult) throws IOException {
         js.executeScript("window.localStorage.clear();");
         if (testResult.getStatus() == ITestResult.FAILURE) {
-            Helper.takeAScreenshot(driver, "screenshots/" + testResult.getName() + ".jpg");
+            Helper.captureScreenshot(driver, "screenshots/" + testResult.getName() + ".jpg");
         }
     }
 }
