@@ -65,4 +65,19 @@ public class LoginTests extends BasicTest{
 
         navPage.checkUrl();
     }
+
+    @Test(priority = 5, retryAnalyzer = RetryAnalyzer.class)
+    public void login() {
+        String email = "admin@admin.com";
+        String password = "12345";
+
+        navPage.clickOnLoginButton();
+        loginPage.enterEmail(email);
+        loginPage.enterPassword(password);
+        loginPage.clickLoginButton();
+
+        wait
+                .withMessage("Url doesn't contain text: /home.")
+                .until(ExpectedConditions.urlContains("/home"));
+    }
 }
