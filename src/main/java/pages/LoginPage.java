@@ -24,4 +24,18 @@ public class LoginPage extends BasicPage {
     public String getPasswordInputAttribute(String name) {
         return getPasswordInput().getAttribute(name);
     }
+    public void enterEmail(String email){
+        getEmailInput().sendKeys(email);
+    }
+    public void enterPassword(String password){
+        getPasswordInput().sendKeys(password);
+    }
+
+    public WebElement getLoginButton() {
+        return driver.findElement(By.cssSelector("*[type='submit']"));
+    }
+
+    public void clickLoginButton() {
+        getLoginButton().click();
+    }
 }

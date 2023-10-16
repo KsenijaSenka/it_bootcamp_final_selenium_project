@@ -12,6 +12,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
+import pages.MessagePopUpPage;
 import pages.NavPage;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ public abstract class BasicTest {
     protected JavascriptExecutor js;
     protected NavPage navPage;
     protected LoginPage loginPage;
+    protected MessagePopUpPage messagePopUpPage;
     @BeforeClass
     public void BeforeClass() {
         WebDriverManager.chromedriver().setup();
@@ -35,6 +37,7 @@ public abstract class BasicTest {
 
         navPage=new NavPage(driver,wait);
         loginPage=new LoginPage(driver,wait);
+        messagePopUpPage=new MessagePopUpPage(driver,wait);
     }
     @BeforeMethod
     public void setup() {
