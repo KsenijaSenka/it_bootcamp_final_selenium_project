@@ -29,4 +29,14 @@ public class NavPage extends BasicPage{
         wait.until(ExpectedConditions.urlContains("/login"));
         wait.withMessage("Url doesn't contain /login");
     }
+
+    public void getLogoutButton() {
+        wait.withMessage("Logout button is invisible.")
+                .until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector(".btnLogout"))));
+    }
+
+    public void clickLogout() {
+        getLogoutButton();
+        driver.findElement(By.cssSelector(".btnLogout")).click();
+    }
 }

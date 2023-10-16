@@ -80,4 +80,8 @@ public class LoginTests extends BasicTest{
                 .withMessage("Url doesn't contain text: /home.")
                 .until(ExpectedConditions.urlContains("/home"));
     }
+    @Test(priority = 6, retryAnalyzer = RetryAnalyzer.class)
+    public void logout() {
+        navPage.clickLogout();
+    }
 }
