@@ -45,4 +45,24 @@ public class LoginTests extends BasicTest{
 
         navPage.checkUrl();
     }
+    @Test (priority = 4, retryAnalyzer = RetryAnalyzer.class)
+    public void displaysErrorsWhenPasswordIsWrong(){
+        String email = "admin@admin.com";
+        String password = "password123";
+
+        navPage.clickOnLoginButton();
+        loginPage.enterEmail(email);
+        loginPage.enterPassword(password);
+        loginPage.clickLoginButton();
+
+        wait
+                .withMessage("Error message is invisible.")
+                .until(ExpectedConditions.visibilityOf(messagePopUpPage.getStatusPopUp()));
+
+        Assert.assertEquals(messagePopUpPage.getStatusErrorMessage(),
+                "Wrong password",
+                "Error message is incorrect");
+
+        navPage.checkUrl();
+    }
 }
