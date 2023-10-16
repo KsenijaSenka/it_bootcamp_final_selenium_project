@@ -39,4 +39,10 @@ public class NavPage extends BasicPage{
         getLogoutButton();
         driver.findElement(By.cssSelector(".btnLogout")).click();
     }
+    public WebElement getSignupLink(){
+        return driver.findElement(By.cssSelector("a[href='/signup']"));
+    }
+    public void clickSignupButton(){
+        getSignupLink().click();
+    }
 }
