@@ -38,4 +38,20 @@ public class AdminCitiesTests extends BasicTest{
         Assert.assertEquals(citiesPage.getCityInputAttribute("type"),
                 "text", "Attribute type should be text.");
     }
+
+    @Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
+    public void createNewCity() {
+        String city = "Ksenija Beocanin's city";
+
+        navPage.clickAdminButton();
+        navPage.clickCitiesButton();
+        citiesPage.clickNewItemButton();
+
+        citiesPage.waitCreateEditDialog();
+        citiesPage.enterCityOfCurrentUser(city);
+        citiesPage.clickToSaveCity();
+        citiesPage.waitForSucessDialog();
+        Assert.assertTrue(citiesPage.getMessageFromSuccessPopUpText()
+                .contains("Saved successfully"), "Message is incorrect");
+    }
 }
