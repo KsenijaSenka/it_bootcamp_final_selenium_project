@@ -15,4 +15,19 @@ public class SignupPage extends BasicPage{
     public String getConfirmPasswordInputAttribute(String name) {
         return getConfirmPasswordInput().getAttribute(name);
     }
+    public WebElement getNameInput(){
+        return driver.findElement(By.id("name"));
+    }
+    public void enterName(String name){
+        getNameInput().sendKeys(name);
+    }
+    public WebElement getSignMeUpButton(){
+        return driver.findElement(By.xpath("//button[@type='submit']"));
+    }
+    public void enterConfirmedPassword(String password){
+        getConfirmPasswordInput().sendKeys(password);
+    }
+    public void clickSignMeUpButton(){
+        getSignMeUpButton().click();
+    }
 }
