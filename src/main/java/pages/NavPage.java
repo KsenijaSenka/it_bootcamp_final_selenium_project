@@ -89,4 +89,10 @@ public class NavPage extends BasicPage{
     public void clickCnLanguageFromDropdown() {
         getCnLanguageFromDropdown().click();
     }
+    public WebElement getFrLanguageFromDropdown() {
+        return driver.findElement(By.className("btnFR"));
+    }
+    public void clickFrLanguageFromDropdown() {
+        getFrLanguageFromDropdown().click();
+    }
 }

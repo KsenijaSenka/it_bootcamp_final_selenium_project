@@ -26,4 +26,11 @@ public class LocaleTests extends BasicTest{
         Assert.assertEquals(navPage.getHeaderText(), "首页",
                 "Header text should be 首页");
     }
+    @Test(retryAnalyzer = RetryAnalyzer.class)
+    public void setLocaleToFR() {
+        navPage.clickOnLanguagesButton();
+        navPage.clickFrLanguageFromDropdown();
+        Assert.assertEquals(navPage.getHeaderText(), "Page d'atterrissage",
+                "Header text should be Page d'atterrissage");
+    }
 }
