@@ -9,4 +9,9 @@ public class AuthRoutesTests extends BasicTest{
         navPage.getHomepage();
         navPage.checkUrl();
     }
+    @Test(priority = 2, retryAnalyzer = RetryAnalyzer.class)
+    public void forbidsVisitsToProfileUrlIfNotAuthenticated() {
+        navPage.getProfilePage();
+        navPage.checkUrl();
+    }
 }

@@ -57,8 +57,11 @@ public class NavPage extends BasicPage{
     public void clickCitiesButton() {
         getCitiesButton().click();
     }
-    public void getHomepage(){
+
+    public void getHomepage() {
         driver.navigate().to("https://vue-demo.daniel-avellaneda.com/home");
     }
-
+    public void getProfilePage() {
+        driver.navigate().to("https://vue-demo.daniel-avellaneda.com/profile");
+    }
 }
