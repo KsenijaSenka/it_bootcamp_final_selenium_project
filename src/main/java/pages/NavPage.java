@@ -16,8 +16,12 @@ public class NavPage extends BasicPage{
     public void clickOnLanguagesButton(){
         getLanguagesButton().click();
     }
-    public void clickEnLanguageFromDropdown(){
-               driver.findElements(By.xpath("//*[@id='list-item-150']/div"));
+
+    public WebElement getEnLanguageFromDropdown() {
+        return driver.findElement(By.className("btnEN"));
+    }
+    public void clickEnLanguageFromDropdown() {
+        getEnLanguageFromDropdown().click();
     }
     public WebElement getLoginButton(){
         return driver.findElement(By.cssSelector("a[href='/login']"));
@@ -69,5 +73,14 @@ public class NavPage extends BasicPage{
     }
     public void getAdminUsersPage(){
         driver.navigate().to("https://vue-demo.daniel-avellaneda.com/admin/users");
+    }
+    public WebElement getEsLanguageFromDropdown() {
+        return driver.findElement(By.className("btnES"));
+    }
+    public void clickEsLanguageFromDropdown() {
+        getEsLanguageFromDropdown().click();
+    }
+    public String getHeaderText() {
+        return driver.findElement(By.xpath("//*[@id='app']//h1")).getText();
     }
 }
