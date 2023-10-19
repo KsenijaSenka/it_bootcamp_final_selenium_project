@@ -83,4 +83,10 @@ public class NavPage extends BasicPage{
     public String getHeaderText() {
         return driver.findElement(By.xpath("//*[@id='app']//h1")).getText();
     }
+    public WebElement getCnLanguageFromDropdown() {
+        return driver.findElement(By.className("btnCN"));
+    }
+    public void clickCnLanguageFromDropdown() {
+        getCnLanguageFromDropdown().click();
+    }
 }
