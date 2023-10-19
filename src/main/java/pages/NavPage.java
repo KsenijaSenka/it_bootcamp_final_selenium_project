@@ -64,4 +64,10 @@ public class NavPage extends BasicPage{
     public void getProfilePage() {
         driver.navigate().to("https://vue-demo.daniel-avellaneda.com/profile");
     }
+    public void getAdminCitiesPage(){
+        driver.navigate().to("https://vue-demo.daniel-avellaneda.com/admin/cities");
+    }
+    public void getAdminUsersPage(){
+        driver.navigate().to("https://vue-demo.daniel-avellaneda.com/admin/users");
+    }
 }

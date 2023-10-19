@@ -14,4 +14,14 @@ public class AuthRoutesTests extends BasicTest{
         navPage.getProfilePage();
         navPage.checkUrl();
     }
+    @Test(priority = 3, retryAnalyzer = RetryAnalyzer.class)
+    public void forbidsVisitsToAdminCitiesUrlIfNotAuthenticated() {
+        navPage.getAdminCitiesPage();
+        navPage.checkUrl();
+    }
+    @Test(priority = 4, retryAnalyzer = RetryAnalyzer.class)
+    public void forbidsVisitsToAdminUsersUrlIfNotAuthenticated(){
+        navPage.getAdminUsersPage();
+        navPage.checkUrl();
+    }
 }
